@@ -1,0 +1,62 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/Addkunit_post/">
+    <table class="table table-bordered">
+    {% csrf_token %}
+  <tr>
+    <th>Name</th>
+    <td>
+      <input type="text" name="textfield" class="form-control" id="textfield" /></td>
+  </tr>
+  
+  <tr>
+    <th>Unit No</th>
+    <td>
+      <input type="text" name="textfield3" class="form-control" id="textfield3" />
+    </td>
+  </tr><tr>
+    <th>Email</th>
+    <td>
+      <input type="email" name="textfield8" class="form-control" id="textfield3" />
+    </td>
+  </tr><tr>
+    <th>phone</th>
+    <td>
+      <input type="text" name="textfield9" class="form-control" id="textfield3" />
+    </td>
+  </tr>
+  <tr>
+    <th>Place</th>
+    <td>
+      <input type="text" name="textfield4" class="form-control" id="textfield4" />
+    </td>
+  </tr>
+  <tr>
+    <th>Ward</th>
+    <td>
+      <input type="text" name="textfield5" class="form-control" id="textfield5" />
+    </td>
+  </tr>
+  <tr>
+    <th>Panchayath</th>
+    <td>
+      <input type="text" name="textfield6" class="form-control" id="textfield6" />
+    </td>
+  </tr></tr>
+  <tr>
+    <th>District</th>
+    <td>
+      <input type="text" name="textfield7" class="form-control" id="textfield6" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><input type="submit" name="button" id="button"class="btn btn-success" value="Add" /></td>
+  </tr>
+  
+</table>
+
+</form>
+</body>
+{% endblock %}

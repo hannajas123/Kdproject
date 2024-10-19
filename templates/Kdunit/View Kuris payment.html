@@ -1,0 +1,40 @@
+{% extends 'Kdunit/kdunitindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/kd_View_Kuri_Payment_post/">
+{% csrf_token %}
+<table class="pull-left">
+  <tr><td>From</td>
+    <td><input type="date"class="form-control" name="textfield" id="textfield1" /></td>
+      <td>To</td>
+    <td><input type="date"class="form-control" name="textfield1" id="textfield1" /></td>
+    <td><input type="submit" name="button" class="btn btn-info" id="button" value="Search" /></td>
+  </tr>
+</table><br>
+  <table class="table table-bordered">
+    <tr>
+      <th>Sl.no</th>
+      <th>Amount</th>
+      
+      <th> Date</th>
+        <th>Kuri</th>
+        <th>Member</th>
+      <th>Status</th>
+      
+    </tr>{% for i in data %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.amount }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.KURIS.name}}</td>
+      <td>{{ i.KDMEMBER.name}}</td>
+
+       <td>{{ i.status }}</td>
+     
+    </tr>{% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

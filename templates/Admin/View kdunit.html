@@ -1,0 +1,47 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/vkunit_post/">
+{% csrf_token %}
+ <table class="pull-left">
+  <tr>
+    <td>
+      <input type="text" name="textfield"class="form-control"placeholder="Search with Name" id="textfield" />
+    </td>
+    <td><input type="submit" name="button" id="button" class="btn btn-info" value="Search" /></td>
+  </tr>
+</table><br>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>Sl.no</th>
+      <th>Name</th>
+      
+      <th>Unit No</th>
+      <th>Place</th>
+      <th>Ward</th>
+      <th>Panchayath</th>
+      <th>District</th>
+      <th></th>
+      <th></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.name }}</td>
+      <td>&nbsp;{{ i.unit_no }}</td>
+      <td>&nbsp;{{ i.place }}</td>
+      <td>&nbsp;{{ i.ward }}</td>
+      <td>&nbsp;{{ i.panchayath }}</td>
+      <td>&nbsp;{{ i.district }}</td>
+       <td width="50px"><a href="/myapp/Edit_kdunit/{{ i.id }}#abc"class="btn btn-warning">Edit</a></td>
+      <td width="50px"><a href="/myapp/delete_kdunit/{{ i.id }}#abc"class="btn btn-danger"onclick="alert('are you sure??')">Delete</a></td>
+       <td width="50px"><a href="/myapp/View_kdmembers/{{ i.id }}#abc"class="btn btn-info">Members</a></td>
+       <td width="50px"><a href="/myapp/Add_meeting/{{ i.id }}#abc"class="btn btn-success">Meeting</a></td>
+       <td><a href="/myapp/View_meeting/{{ i.id }}#abc"class="btn btn-warning">View Meeting</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

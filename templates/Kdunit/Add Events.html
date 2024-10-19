@@ -1,0 +1,31 @@
+{% extends 'Kdunit/kdunitindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/kd_Add_events_post/">
+    {% csrf_token %}
+  <table class="table table-bordered">
+    <tr>
+      <th>Date</th>
+      <td><input type="date" class="form-control" name="textfield" id="textfield" required /></td>
+    </tr>
+    <tr>
+      <th>Time</th>
+      <td><input type="time" class="form-control" name="textfield2" id="textfield2" required /></td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td><input type="text"class="form-control" name="textfield3" id="textfield3" required/></td>
+    </tr>
+    <tr>
+      <th>Theme</th>
+      <td><input type="text" name="textfield4"class="form-control" id="textfield4" required/></td>
+    </tr>
+    <tr>
+
+      <td align="center" colspan="2"><input type="submit" name="button" id="button" class="btn btn-success" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

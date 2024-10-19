@@ -1,0 +1,34 @@
+{% extends 'Kdunit/kdunitindex.html' %}
+{% block body %}
+
+
+<body><form action="/myapp/kd_Edit_kuries_post/" method="post">
+    <table class="table table-bordered">
+        {% csrf_token %}
+  <tr><input type="hidden" name="id1" value="{{ data.id }}" />
+    <th>Name</th>
+    <td><input type="text" name="textfield" class="form-control"value="{{ data.name }}" id="textfield" required/></td>
+  </tr>
+  <tr>
+    <th>Total Amount</th>
+    <td><input type="text" name="textfield2"class="form-control" id="textfield2"value="{{ data.totalAmount }}" required/></td>
+  </tr>
+  <tr>
+    <th>Total Installment</th>
+    <td><input type="text" name="textfield3"class="form-control" id="textfield3" value="{{ data.totalinstallments }}"required/></td>
+  </tr>
+  <tr>
+    <th>Starting Date</th>
+    <td><input type="text" name="textfield4"class="form-control" id="textfield4"value="{{ data.startingDate|date:'Y-m-d' }}" required/></td>
+  </tr>
+  <tr>
+    <th>Closing Date</th>
+    <td><input type="text" name="textfield5"class="form-control" id="textfield5"value="{{ data.EndingDate|date:'Y-m-d' }}" required/></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><input type="submit"class="btn btn-success" name="button" id="button" value="Update" /></td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

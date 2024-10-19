@@ -1,0 +1,53 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/editkdunit_post/"><table class="table table-bordered">
+    {% csrf_token %}
+  <tr>
+      <input type="hidden" name="id1"  value="{{ data.id }}" />
+    <th>Name</th>
+    <td>
+      <input type="text" name="textfield" id="textfield" value="{{ data.name }}"class="form-control" />
+    </td>
+  </tr>
+  
+  <tr>
+    <th>Unit No</th>
+    <td>
+      <input type="text" name="textfield3" id="textfield3"value="{{ data.unit_no }}"class="form-control" />
+    </td>
+  </tr>
+  <tr>
+    <th>Place</th>
+    <td>
+      <input type="text" name="textfield4" id="textfield4"value="{{ data.place }}"class="form-control" />
+    </td>
+  </tr>
+  <tr>
+    <th>Ward</th>
+    <td>
+      <input type="text" value="{{ data.ward }}" name="textfield5" id="textfield5"class="form-control" />
+    </td>
+  </tr>
+  <tr>
+    <th>Panchayath</th>
+    <td>
+      <input type="text" value="{{ data.panchayath }}" name="textfield6" id="textfield6"class="form-control" />
+    </td>
+  </tr></tr>
+  <tr>
+    <th>District</th>
+    <td>
+      <input type="text" name="textfield6"value="{{ data.district }}" id="textfield6"class="form-control" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><input type="submit" name="button" id="button" value="Update"class="btn btn-success" /></td>
+  </tr>
+  
+</table>
+
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'Kdunit/kdunitindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/kd_Edit_Product_post/"enctype="multipart/form-data">
+    {% csrf_token %}<table class="table table-bordered">
+  <tr><input type="hidden" name="id1" value="{{ data.id }}" />
+    <th>Name</th>
+    <td>
+      <input type="text" class="form-control"name="textfield"value="{{ data.name }}" id="textfield" required/>
+    </td>
+  </tr>
+  
+  <tr>
+    <th>Quantity</th>
+    <td>
+      <input type="text"class="form-control" name="textfield3"value="{{ data.quantity }}" id="textfield3" required/>
+    </td>
+  </tr>
+  <tr>
+    <th>Price</th>
+    <td>  
+      <input type="text" name="textfield4"class="form-control"value="{{ data.price }}" id="textfield4" required/>
+      </td>
+  </tr>
+  <tr>
+    <th>Details</th>
+    <td>  
+      <input type="text" name="textfield5"class="form-control"value="{{ data.datails }}" id="textfield5" required/>
+      </td>
+  </tr>
+  <tr>
+    <th>Photo</th>
+    <td>
+        <img src="{{ data.photo }}" height="100px" width="100px" alt=""/>
+      <input type="file" name="textfield6"class="form-control" id="textfield6" required/>
+    </td>
+  </tr></tr>
+  <tr>
+{#    <td>Rating</td>#}
+{#    <td>  #}
+{#      <input type="text" name="textfield6"value="{{ data.name }}" id="textfield6" />#}
+{#      </td>#}
+{#  </tr>#}
+  <tr>
+    <th>Quality</th>
+    <td>  
+      <input type="text" name="textfield7"class="form-control"value="{{ data.quality }}" id="textfield6" required/>
+      </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><input type="submit"  class="btn btn-success" name="button" id="button" value="Update" /></td>
+  </tr>
+  
+</table>
+
+</form>
+</body>
+{% endblock %}

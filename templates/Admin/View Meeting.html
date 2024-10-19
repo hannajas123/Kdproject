@@ -1,0 +1,41 @@
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/viewmeeting_post/">
+<table class="pull-left">
+  <tr>
+  <th>From</th>
+    <td><input type="date" name="textfield" class="form-control" id="textfield" /></td>
+    <th>To</th>
+    <td><input type="date" name="textfield1" class="form-control" id="textfield1" /></td>
+    <td><input type="submit" name="button" id="button" class="btn btn-info" value="Search" /></td>
+  </tr>
+</table><br>
+  <table class="table table-bordered">
+    <tr>
+      <th>Sl.no</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Purpose</th>
+            <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td width="50px">&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>{{ i.time }}</td>
+
+      <td>&nbsp;{{ i.purpose }}</td>
+      <td><a href="/myapp/Edit_meeting/{{ i.id }}#abc"class="btn btn-warning">Edit</a></td>
+            <td><a href="/myapp/delete_meeting/{{ i.id }}#abc"class=" btn btn-danger">Delete</a></td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
